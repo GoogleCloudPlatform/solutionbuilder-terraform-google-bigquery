@@ -1,0 +1,13 @@
+roles/aiplatform.admin
+roles/bigquery.admin
+roles/config.agent
+roles/datalineage.viewer
+roles/eventarc.admin
+roles/iam.serviceAccountAdmin
+roles/iam.serviceAccountUser
+roles/logging.configWriter
+roles/pubsub.admin
+roles/resourcemanager.projectIamAdmin
+roles/serviceusage.serviceUsageAdmin
+roles/storage.admin
+roles/workflows.admin
