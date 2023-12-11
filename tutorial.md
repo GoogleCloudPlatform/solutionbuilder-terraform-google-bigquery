@@ -11,10 +11,12 @@ Learn how to build and deploy your own proof of concept solution based on the de
 
 To avoid conflicts, only one user should modify and deploy a solution in a single GCP project.
 
-NOTE: Open the directory where the repository is cloned as a workspace in the editor:
+## Open cloned repository as workspace
+
+Open the directory where the repository is cloned as a workspace in the editor.
 * Go to the `File` menu.
 * Select `Open Workspace`.
-* Choose the directory where the repository has been cloned.
+* Choose the directory where the repository has been cloned. This directory is the current directory in the cloud shell terminal.
 
 ## Details of your chosen data warehouse with BigQuery Jump Start Solution 
 
@@ -100,7 +102,7 @@ projects/<var>PROJECT_ID</var>/serviceAccounts/<service-account>@<var>PROJECT_ID
 
 ```
 Note <service-account> part and set the <var>SERVICE_ACCOUNT</var> value.
-You can also set it to any exising service account.
+You can also set it to any existing service account.
 ```
 
 ---
