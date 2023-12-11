@@ -47,10 +47,10 @@ cd modules/data_warehouse
 
 **Create an automated deployment**
 
-(Optional step) If you want to learn individual steps involved in the script, you can skip this step and continue with the rest of the tutorial. However, if you want an automated deployment without following the full tutorial, run the <walkthrough-editor-open-file filePath="./modules/data_warehouse/deploy.sh">deploy.sh</walkthrough-editor-open-file> script.
+(Optional step) If you want to learn individual steps involved in the script, you can skip this step and continue with the rest of the tutorial. However, if you want an automated deployment without following the full tutorial, run the <walkthrough-editor-open-file filePath="./modules/data_warehouse/deploy_solution.sh">deploy_solution.sh</walkthrough-editor-open-file> script.
 
 ```bash
-./deploy.sh
+./deploy_solution.sh
 ```
 
 ## Gather information to intialize the  gcloud command
