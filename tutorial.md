@@ -32,11 +32,10 @@ Open the directory where the repository is cloned as a workspace in the editor, 
 ## Before you begin
 
 Before editing the solution, you should be aware of the following information:
-
 * Application code is available under `./modules/data_warehouse/src`
 * Terraform / infrastructure code is available in the `./modules/data_warehouse/*.tf` files.
 
-We also strongly recommend that you familiarize yourself with the three-tier web app solution by reading the [solution guide](https://cloud.google.com/solutions/data-warehouse).
+We also strongly recommend that you familiarize yourself with the Data warehouse with BigQuery solution by reading the [solution guide](https://cloud.google.com/solutions/data-warehouse).
 
 ## Edit the solution
 
@@ -108,7 +107,7 @@ gcloud infra-manager deployments describe <var>DEPLOYMENT_NAME</var> --location 
 ```
 From the output, note down the following:
 * The values of the existing deployment available in the `terraformBlueprint.inputValues` section.
-* The service account. It is of the following form:
+* The service account has the following format:
 
 ```
 projects/<var>PROJECT_ID</var>/serviceAccounts/<service-account>@<var>PROJECT_ID</var>.iam.gserviceaccount.com
@@ -138,7 +137,7 @@ done < "roles.txt"
 ```
 
 ---
-**Create a terraform input file**
+**Create a Terraform input file**
 
 Create an `input.tfvars` file in the current directory with the following contents:
 
@@ -199,7 +198,7 @@ To download your solution, in the `File` menu, select `Download Workspace`. The 
 ---
 **Save your solution to your Git repository**
 
-Set the remote url to your Git repository
+Set the remote URL to your Git repository
 ```bash 
 git remote set-url origin [git-repo-url]
 ```
