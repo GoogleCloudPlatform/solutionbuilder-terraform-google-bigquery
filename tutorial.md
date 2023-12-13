@@ -9,7 +9,7 @@
 
 Learn how to build and deploy your own proof of concept solution based on the deployed [Data warehouse with BigQuery](https://console.cloud.google.com/products/solutions/details/data-warehouse) Jump Start Solution and deploy it. You can customize the Jump Start Solution deployment by creating a copy of the source code. You can modify the infrastructure and application code as needed and redeploy the solution with the changes.
 
-To avoid conflicts, only one user should modify and deploy a solution in a single GCP project.
+To avoid conflicts, only one user should modify and deploy a solution in a single Google Cloud project.
 
 ## Open cloned repository as workspace
 
@@ -18,26 +18,29 @@ Open the directory where the repository is cloned as a workspace in the editor, 
 ---
 **Legacy Cloud Shell Editor**
 
-* Go to the `File` menu.
-* Select `Open Workspace`.
-* Choose the directory where the repository has been cloned. This directory is the current directory in the cloud shell terminal.
+1. Go to the `File` menu.
+2. Select `Open Workspace`.
+3. Choose the directory where the repository has been cloned. This directory is the current directory in the cloud shell terminal.
 
 **New Cloud Shell Editor**
 
-* Go the hamburger icon located in the top left corner of the editor.
-* Go to the `File` Menu.
-* Select `Open Folder`.
-* Choose the directory where the repository has been cloned. This directory is the current directory in the cloud shell terminal.
+1. Go the hamburger icon located in the top left corner of the editor.
+2. Go to the `File` Menu.
+3. Select `Open Folder`.
+4. Choose the directory where the repository has been cloned. This directory is the current directory in the cloud shell terminal.
 
-## Details of your chosen data warehouse with BigQuery Jump Start Solution 
+## Before you begin
 
-* [Solution Guide](https://cloud.google.com/solutions/data-warehouse)
+Before editing the solution, you should be aware of the following information:
+
 * Application code is available under `./modules/data_warehouse/src`
 * Terraform / infrastructure code is available in the `./modules/data_warehouse/*.tf` files.
 
+We also strongly recommend that you familiarize yourself with the three-tier web app solution by reading the [solution guide](https://cloud.google.com/solutions/data-warehouse).
+
 ## Edit the solution
 
-Edit the <walkthrough-editor-select-line filePath="./modules/data_warehouse/main.tf" startLine="79" endLine="80" startCharacterOffset="0" endCharacterOffset="0">./modules/data_warehouse/main.tf</walkthrough-editor-select-line> to update labels for resource type: `google_storage_bucket` and name: `raw_bucket` like below
+For example, edit the <walkthrough-editor-select-line filePath="./modules/data_warehouse/main.tf" startLine="79" endLine="80" startCharacterOffset="0" endCharacterOffset="0">./modules/data_warehouse/main.tf</walkthrough-editor-select-line> to update labels for resource type: `google_storage_bucket` and name: `raw_bucket` like below
 
 ```
  labels = {
@@ -64,7 +67,7 @@ Optional: If you want to learn individual steps involved in the script, you can 
 ./deploy_solution.sh
 ```
 
-## Gather information to intialize the  gcloud command
+## Gather information to intialize the deployment environment
 
 ---
 **Project ID**
