@@ -16,17 +16,17 @@ To avoid conflicts, only one user should modify and deploy a solution in a singl
 Open the directory where the repository is cloned as a workspace in the editor, follow the steps based on whether you are using the Cloud Shell Editor in Preview Mode or Legacy Mode.
 
 ---
-**Cloud Shell Editor in Preview Mode**
+**Legacy Cloud Shell Editor**
+
+* Go to the `File` menu.
+* Select `Open Workspace`.
+* Choose the directory where the repository has been cloned. This directory is the current directory in the cloud shell terminal.
+
+**New Cloud Shell Editor**
 
 * Go the hamburger icon located in the top left corner of the editor.
 * Go to the `File` Menu.
 * Select `Open Folder`.
-* Choose the directory where the repository has been cloned. This directory is the current directory in the cloud shell terminal.
-
-**Cloud Shell Editor in Legacy Mode**
-
-* Go to the `File` menu.
-* Select `Open Workspace`.
 * Choose the directory where the repository has been cloned. This directory is the current directory in the cloud shell terminal.
 
 ## Details of your chosen data warehouse with BigQuery Jump Start Solution 
