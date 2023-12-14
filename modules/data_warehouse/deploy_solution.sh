@@ -69,8 +69,10 @@ You can modify their values."
 
 read -p "Once done, press Enter to continue: "
 
+DEPLOYMENT_DESCRIPTION=$(gcloud infra-manager deployments describe ${DEPLOYMENT_NAME} --location ${REGION} --format json)
 cat <<EOF > input.tfvars
-region="us-central1"
+# Do not edit the region as changing the region can lead to failed deployment.
+region="$(echo $DEPLOYMENT_DESCRIPTION | jq -r '.terraformBlueprint.inputValues.region.inputValue')"
 project_id = "${PROJECT_ID}"
 deployment_name = "${DEPLOYMENT_NAME}"
 labels = {
@@ -81,7 +83,7 @@ force_destroy = true
 deletion_protection = false
 EOF
 
-echo "An input.tfvars has been created in the current directory with a set of sample input terraform variables for the solution. You can modify their values."
+echo "An input.tfvars has been created in the current directory with a set of default input terraform variables for the solution. You can modify their values or go ahead with the defaults."
 read -p "Once done, press Enter to continue: "
 
 echo "Creating the cloud storage bucket if it does not exist already"

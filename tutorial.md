@@ -139,10 +139,16 @@ done < "roles.txt"
 ---
 **Create a Terraform input file**
 
-Create an `input.tfvars` file in the current directory with the following contents:
+Get the existing region being used for terraform resources.
+
+```bash
+echo $(gcloud infra-manager deployments describe <var>DEPLOYMENT_NAME</var> --location <var>REGION</var> --format json) | jq -r '.terraformBlueprint.inputValues.region.inputValue'
+```
+
+Create an `input.tfvars` file in the current directory with the following contents. Update the region fetched above in the `TF_REGION` variable:
 
 ```
-region="us-central1"
+region="<var>TF_REGION</var>"
 project_id = "<var>PROJECT_ID</var>"
 deployment_name = "<var>DEPLOYMENT_NAME</var>"
 labels = {
@@ -170,7 +176,7 @@ gsutil mb gs://<var>PROJECT_ID</var>_infra_manager_staging/
 ---
 **Deploy the solution**
 
-Trigger the re-deployment. 
+Trigger the re-deployment.
 ```bash
 gcloud infra-manager deployments apply projects/<var>PROJECT_ID</var>/locations/<var>REGION</var>/deployments/<var>DEPLOYMENT_NAME</var> --service-account projects/<var>PROJECT_ID</var>/serviceAccounts/<var>SERVICE_ACCOUNT</var>@<var>PROJECT_ID</var>.iam.gserviceaccount.com --local-source="." --inputs-file=./input.tfvars --labels="modification-reason=make-it-mine,goog-solutions-console-deployment-name=<var>DEPLOYMENT_NAME</var>,goog-solutions-console-solution-id=data-warehouse,goog-config-partner=sc"
 ```
