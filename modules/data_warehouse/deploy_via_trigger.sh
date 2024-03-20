@@ -70,7 +70,7 @@ else \
     --role="$role" \
     --condition=None
 fi
-done < "roles.txt"
+done < "./modules/data_warehouse/roles.txt"
 
 DEPLOYMENT_DESCRIPTION=$(gcloud infra-manager deployments describe ${DEPLOYMENT_NAME} --location ${REGION} --format json)
 cat <<EOF > input.tfvars
