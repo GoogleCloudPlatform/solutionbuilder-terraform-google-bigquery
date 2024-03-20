@@ -2,7 +2,7 @@ roles/aiplatform.admin
 roles/bigquery.admin
 roles/config.agent
 roles/datalineage.viewer
-roles/eventarc.admin
+roles/cloudfunctions.admin
 roles/iam.serviceAccountAdmin
 roles/iam.serviceAccountUser
 roles/logging.configWriter

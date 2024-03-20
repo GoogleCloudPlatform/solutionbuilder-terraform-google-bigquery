@@ -14,7 +14,7 @@
 steps:
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash'
-  args: ['./modules/data_warehouse/deploy_via_trigger.sh', '-p$PROJECT_ID']
+  args: ['./deploy_via_trigger.sh', '-p$PROJECT_ID']
 serviceAccount: 'projects/$PROJECT_ID/serviceAccounts/cloudbuild-trigger-default@$PROJECT_ID.iam.gserviceaccount.com'
 options:
   logging: CLOUD_LOGGING_ONLY
