@@ -59,7 +59,7 @@ echo "Assigning required roles to the service account ${SERVICE_ACCOUNT}"
 CURRENT_POLICY=$(gcloud projects get-iam-policy ${PROJECT_ID} --format=json)
 MEMBER_EMAIL=$(echo ${SERVICE_ACCOUNT} | awk -F '/' '{print $NF}')
 MEMBER="serviceAccount:${MEMBER_EMAIL}"
-#apt-get install jq -y
+apt-get install jq -y
 while IFS= read -r role || [[ -n "$role" ]]
 do \
 if echo "$CURRENT_POLICY" | jq -e --arg role "$role" --arg member "$MEMBER" '.bindings[] | select(.role == $role) | .members[] | select(. == $member)' > /dev/null; then \
@@ -96,4 +96,4 @@ else
 fi
 
 echo "Deploying the solution"
-gcloud infra-manager deployments apply projects/${PROJECT_ID}/locations/${REGION}/deployments/${DEPLOYMENT_NAME} --service-account ${SERVICE_ACCOUNT} --local-source="." --inputs-file=./input.tfvars --labels="modification-reason=make-it-mine,goog-solutions-console-deployment-name=${DEPLOYMENT_NAME},goog-solutions-console-solution-id=data-warehouse,goog-config-partner=sc"
+gcloud infra-manager deployments apply projects/${PROJECT_ID}/locations/${REGION}/deployments/${DEPLOYMENT_NAME} --service-account ${SERVICE_ACCOUNT} --local-source="modules/data_warehouse" --inputs-file=./input.tfvars --labels="modification-reason=make-it-mine,goog-solutions-console-deployment-name=${DEPLOYMENT_NAME},goog-solutions-console-solution-id=data-warehouse,goog-config-partner=sc"
